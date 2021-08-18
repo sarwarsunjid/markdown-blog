@@ -11,10 +11,18 @@ app.get('/', (req, res) =>{
     //res.render('index', { articles:articles })
     const articles = [{
         title : 'Test Articles',
-        description : 'Test description',
-        createdAt : Date.now(),
-    }]
-    res.render('index', { articles: articles })
+        //createdAt : Date.now(),
+        createdAt : new Date(),
+        description : 'Test description'
+    },
+    {
+        title : 'Test Articles 2',
+        //createdAt : Date.now(),
+        createdAt : new Date(),
+        description : 'Test description 2'
+    }
+]
+    res.render('articles/index', { articles: articles })
 })
 
 app.listen(5000)
